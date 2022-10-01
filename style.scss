@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+*{
+  font-family: 'Outfit', sans-serif;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url(img/background.jpg);
+  background-position: center 30%;
+  background-size: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  header{
+    text-align: center;
+    color: #fff;
+    p{
+      font-weight: lighter;
+    }
+  }
+  main{
+    #location{
+      color: #fff;
+      text-align: center;
+      font-weight: bolder;
+    }
+    .weather-img{
+      text-align: center;
+      img{
+        height: 150px;
+      }
+    }
+    #temperature{
+      text-align: center;
+      font-size: 6em;
+      margin: 0;
+      color: #fff;
+      span{
+        font-size: 30px;
+        margin-bottom: 50px;
+      }
+    }
+    #weather{
+      text-align: center;
+      color: #fff;
+    }
+    #date{
+      text-align: center;
+      color: white;
+    }
+    .weather-statistics{
+      margin: 0 30px;
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+      .statistic{
+        i{
+          text-align: center;
+          width: 100%;
+          font-size: 25px;
+        }
+        p{
+          width: 100%;
+          text-align: center;
+          font-size: 20px;
+        }
+        .category{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 230px;
+    .form-wrapper{
+      width: 100%;
+      height: 50%;
+      background-color: #fff;
+      margin: 20px 30px;
+      padding: 20px;
+      border-radius: 10px;
+      form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        label{
+          font-size: 20px;
+        }
+        input[type="text"]{
+          border: none;
+          box-shadow: none;
+          margin: 20px 0;
+          height: 40px;
+          &::placeholder{
+            font-size: 20px;
+          }
+        }
+        input[type="submit"]{
+          background-color: red;
+          font-size: 20px;
+          background-color: #2d2a2b;
+          color: white;
+          border: none;
+          box-shadow: none;
+          border-radius: 5px;
+          padding: 10px 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
