@@ -19,6 +19,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 80vh;
 }
 
 body header {
@@ -28,6 +29,11 @@ body header {
 
 body header p {
   font-weight: lighter;
+  margin: 0;
+}
+
+body main {
+  height: auto;
 }
 
 body main #location {
@@ -41,7 +47,7 @@ body main .weather-img {
 }
 
 body main .weather-img img {
-  height: 150px;
+  height: 130px;
 }
 
 body main #temperature {
@@ -81,13 +87,13 @@ body main .weather-statistics {
 body main .weather-statistics .statistic i {
   text-align: center;
   width: 100%;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 body main .weather-statistics .statistic p {
   width: 100%;
   text-align: center;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 body main .weather-statistics .statistic .category {
@@ -104,12 +110,13 @@ body .form-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 230px;
+  height: 200px;
+  padding: 0;
 }
 
 body .form-container .form-wrapper {
   width: 100%;
-  height: 50%;
+  height: auto;
   background-color: #fff;
   margin: 20px 30px;
   padding: 20px;
@@ -125,6 +132,7 @@ body .form-container .form-wrapper form {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  margin: 0;
 }
 
 body .form-container .form-wrapper form label {
@@ -137,6 +145,8 @@ body .form-container .form-wrapper form input[type="text"] {
           box-shadow: none;
   margin: 20px 0;
   height: 40px;
+  font-size: 20px;
+  margin-bottom: 0;
 }
 
 body .form-container .form-wrapper form input[type="text"]::-webkit-input-placeholder {
@@ -166,5 +176,16 @@ body .form-container .form-wrapper form input[type="submit"] {
   border-radius: 5px;
   padding: 10px 0;
   width: 100%;
+}
+
+body .form-container .form-wrapper form #error {
+  opacity: 0%;
+  font-size: 17px;
+  margin-top: 0;
+}
+
+.active {
+  color: red;
+  opacity: 100% !important;
 }
 /*# sourceMappingURL=style.css.map */
