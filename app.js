@@ -14,6 +14,9 @@ function searchWeather(e) {
   if(cityName == ""){
     error.classList.add("active");
   };
+  setTimeout(() => {
+    error.classList.remove("active");
+  }, 5000);
 
   fetchApi(cityName);
 };
@@ -25,7 +28,6 @@ function fetchApi(city){
   fetch(url)
     .then(answer => answer.json())
     .then(data => {
-      console.log(data);
       if(data.cod === "404"){
         error.classList.add("active");
       }
@@ -42,13 +44,18 @@ function fetchApi(city){
 function userTime(data) {
   const showDate = document.getElementById("date");
   const { dt } = data;
-  let unix_timestamp = dt
-  let date = new Date(unix_timestamp * 1000);
-  let hours = date.getHours();
-  let minutes = "0" + date.getMinutes();
-  let formattedTime = hours + ':' + minutes.substr(-2);
+  console.log(data);
+  if(data.cod !== "404" && data.cod !== "400"){
+    let unix_timestamp = dt
+    let date = new Date(unix_timestamp * 1000);
+    let hours = date.getHours();
+    let minutes = "0" + date.getMinutes();
+    let formattedTime = hours + ':' + minutes.substr(-2);
 
-  showDate.innerHTML = formattedTime;
+    showDate.innerHTML = formattedTime;
+  } else {
+    showDate.innerHTML = "";
+  }
 }
 
 function backGround(data) {

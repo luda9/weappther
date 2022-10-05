@@ -23,6 +23,7 @@ body{
   }
   main{
     height: auto;
+    margin: 0;
     #location{
       color: #fff;
       text-align: center;
@@ -31,12 +32,12 @@ body{
     .weather-img{
       text-align: center;
       img{
-        height: 130px;
+        height: 100px;
       }
     }
     #temperature{
       text-align: center;
-      font-size: 6em;
+      font-size: 5em;
       margin: 0;
       color: #fff;
       span{
@@ -47,14 +48,16 @@ body{
     #weather{
       text-align: center;
       color: #fff;
+      margin-bottom: 0;
     }
     #date{
       text-align: center;
       color: white;
+      margin-top: 0;
     }
     .weather-statistics{
-      margin: 0 30px;
-      margin-top: 50px;
+      margin: 50px 30px;
+      margin-bottom: 0;
       display: flex;
       justify-content: space-between;
       color: #fff;
@@ -63,14 +66,17 @@ body{
           text-align: center;
           width: 100%;
           font-size: 20px;
+          color: #000;
         }
         p{
           width: 100%;
           text-align: center;
           font-size: 16px;
+          color: #000;
         }
         .category{
           font-size: 16px;
+          color: #000;
         }
       }
     }
@@ -79,7 +85,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 200px;
     padding: 0;
     .form-wrapper{
       width: 100%;
@@ -88,11 +93,11 @@ body{
       margin: 20px 30px;
       padding: 20px;
       border-radius: 10px;
+      margin: 0 30px;
       form{
         display: flex;
         flex-direction: column;
         width: 100%;
-        margin: 0;
         label{
           font-size: 20px;
         }
@@ -102,13 +107,12 @@ body{
           margin: 20px 0;
           height: 40px;
           font-size: 20px;
-          margin-bottom: 0;
+          margin: 0;
           &::placeholder{
             font-size: 20px;
           }
         }
         input[type="submit"]{
-          background-color: red;
           font-size: 20px;
           background-color: #2d2a2b;
           color: white;
@@ -117,11 +121,12 @@ body{
           border-radius: 5px;
           padding: 10px 0;
           width: 100%;
+          cursor: pointer;
         }
         #error{
           opacity: 0%;
           font-size: 17px;
-          margin-top: 0;
+          margin: 0;
         }
       }
     }
@@ -131,4 +136,116 @@ body{
 .active{
   color: red;
   opacity: 100% !important;
+}
+
+// MEDIA QUERYS ---------------------------------
+
+@media (min-width: 768px){
+  body{
+    background-image: url(img/day-background.jpg);
+    background-position: center 30%;
+    background-size: auto;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 15% 25% 25% 35%;
+    margin: 0;
+    header{
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p{
+        font-size: 30px;
+      }
+    }
+    main{
+      grid-column: 1 / -1;
+      grid-row: 2 / 4;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 10% 40% 10% 45%;
+      #location{
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+      .weather-img{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        img{
+          height: 150px;
+        }
+      }
+      #temperature{
+        font-size: 7em;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+      #weather{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+      #date{
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        font-size: 20px;
+      }
+      .weather-statistics{
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+        justify-content: space-around;
+        padding: 20px;
+        background-color: #ccc;
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        width: 60%;
+        margin: 0 auto;
+        .statistic{
+          height: auto;
+          padding: 10px;
+          width: 25%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          i{
+            font-size: 25px;
+            margin-bottom: 10px;
+          }
+          p{
+            font-size: 20px;
+            margin: 0;
+          }
+          .category{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .form-container{
+      grid-column: 1 / -1;
+      grid-row: 4 / 5;
+      width: 64%;
+      margin: 0 auto;
+      .form-wrapper{
+        form{
+          label{
+            font-size: 25px;
+          }
+          input[type="text"]{
+            font-size: 25px;
+            &::placeholder{
+              font-size: 25px;
+            }
+          }
+          input[type="submit"]{
+            font-size: 25px;
+          }
+          #error{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
 }
